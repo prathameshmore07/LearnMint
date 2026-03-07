@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - LearnMint</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Learn<span>Mint</span></a>
+            <div class="nav-links" id="nav-links">
+                <a href="index.html">Home</a>
+                <a href="courses.html">Courses</a>
+                <a href="pricing.html" class="active">Pricing</a>
+            </div>
+            <div class="nav-auth" id="nav-auth"></div>
+            <div class="nav-toggle" id="menu-toggle">☰</div>
+        </div>
+    </nav>
+
+    <main class="section-padding">
+        <header class="text-center pricing-header">
+            <h1 class="pricing-title">Simple, Transparent Pricing</h1>
+            <p class="pricing-subtitle">Invest in your future with our flexible plans.</p>
+        </header>
+
+        <div class="pricing-grid" style="align-items: stretch; gap: 2rem;">
+            <!-- basic plan -->
+            <div class="pricing-card"
+                style="border: 1px solid #e2e8f0; box-shadow: none; border-radius: 12px; padding: 2.5rem 2rem; background: transparent; text-align: center; display: flex; flex-direction: column;">
+                <h3 style="color: #0f172a; margin: 0 0 0.25rem 0; font-size: 1.15rem;">Basic</h3>
+                <p class="courses-subtitle" style="margin: 0 0 1.5rem 0; font-size: 0.85rem; color: #64748b;">Perfect
+                    for a quick skill boost.</p>
+                <div class="price"
+                    style="margin-bottom: 2rem; font-size: 2.5rem; font-weight: 800; color: #0f172a; display: flex; justify-content: center; align-items: baseline;">
+                    ₹299<span
+                        style="font-size: 0.9rem; color: #64748b; font-weight: 600; margin-left: 2px;">/week</span>
+                </div>
+                <!-- empty spacer to keep UL pushed down evenly if needed, but flex-grow on UL handles it -->
+                <ul class="feature-list"
+                    style="text-align: left; margin: 0 auto; display: block; width: fit-content; padding: 0; flex-grow: 1;">
+                    <li style="margin-bottom: 0.75rem; font-size: 0.85rem; color: #64748b;"><span
+                            style="color: #22c55e; margin-right: 8px;">✅</span>Weekly access to 1 course</li>
+                    <li style="margin-bottom: 0.75rem; font-size: 0.85rem; color: #64748b;"><span
+                            style="color: #22c55e; margin-right: 8px;">✅</span>Mobile & Desktop access</li>
+                    <li style="margin-bottom: 0.75rem; font-size: 0.85rem; color: #64748b;"><span
+                            style="color: #22c55e; margin-right: 8px;">✅</span>Certificate of completion</li>
+                    <li style="margin-bottom: 0; font-size: 0.85rem; color: #64748b;"><span
+                            style="color: #ef4444; margin-right: 8px;">❌</span>Community access</li>
+                </ul>
+                <button onclick="handlePlanSelection('Basic')" class="btn btn-outline"
+                    style="width: 100%; margin-top: 1.5rem;">Choose Basic</button>
+            </div>
+
+            <!-- bundle plan -->
+            <div class="pricing-card popular"
+                style="border: 1px solid var(--primary-mint); box-shadow: none; border-radius: 12px; padding: 2.5rem 2rem; background: #f8fafc; text-align: center; position: relative; display: flex; flex-direction: column;">
+                <div class="badge-popular"
+                    style="position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--primary-mint); color: white; padding: 6px 16px; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.5px; white-space: nowrap;">
+                    BEST VALUE</div>
+                <h3 style="color: #0f172a; margin: 0 0 0.25rem 0; font-size: 1.15rem;">Bundle</h3>
+                <p class="courses-subtitle" style="margin: 0 0 1.5rem 0; font-size: 0.85rem; color: #64748b;">The most
+                    popular choice.</p>
+                <div class="price"
+                    style="margin-bottom: 1rem; font-size: 2.5rem; font-weight: 800; color: #0f172a; display: flex; justify-content: center; align-items: baseline;">
+                    ₹1199<span
+                        style="font-size: 0.9rem; color: #64748b; font-weight: 600; margin-left: 2px;">/month</span>
+                </div>
+                <div style="margin-bottom: 2rem;">
+                    <div class="discount-label"
+                        style="display: inline-block; background: transparent; color: #0f172a; font-size: 0.75rem; font-weight: 700;">
+                        Save 20%
+                    </div>
+                </div>
+                <ul class="feature-list"
+                    style="text-align: left; margin: 0 auto; display: block; width: fit-content; padding: 0; flex-grow: 1;">
+                    <li style="margin-bottom: 0.75rem; font-size: 0.85rem; color: #64748b;"><span
+                            style="color: #22c55e; margin-right: 8px;">✅</span>Any 3 micro-courses</li>
+                    <li style="margin-bottom: 0.75rem; font-size: 0.85rem; color: #64748b;"><span
+                            style="color: #22c55e; margin-right: 8px;">✅</span>Priority support</li>
+                    <li style="margin-bottom: 0.75rem; font-size: 0.85rem; color: #64748b;"><span
+                            style="color: #22c55e; margin-right: 8px;">✅</span>Verified certificates</li>
+                    <li style="margin-bottom: 0; font-size: 0.85rem; color: #64748b;"><span
+                            style="color: #22c55e; margin-right: 8px;">✅</span>Private community access</li>
+                </ul>
+                <button onclick="handlePlanSelection('Bundle')" class="btn btn-primary"
+                    style="width: 100%; margin-top: 1.5rem;">Choose Bundle</button>
+            </div>
+
+            <!-- pro plan -->
+            <div class="pricing-card"
+                style="border: 1px solid var(--primary-mint); box-shadow: none; border-radius: 12px; padding: 2.5rem 2rem; background: transparent; text-align: center; display: flex; flex-direction: column;">
+                <h3 style="color: #0f172a; margin: 0 0 0.25rem 0; font-size: 1.15rem;">Pro</h3>
+                <p class="courses-subtitle" style="margin: 0 0 1.5rem 0; font-size: 0.85rem; color: #64748b;">For the
+                    serious learner.</p>
+                <div class="price"
+                    style="margin-bottom: 1rem; font-size: 2.5rem; font-weight: 800; color: #0f172a; display: flex; justify-content: center; align-items: baseline;">
+                    ₹1999<span
+                        style="font-size: 0.9rem; color: #64748b; font-weight: 600; margin-left: 2px;">/month</span>
+                </div>
+                <div style="margin-bottom: 2rem;">
+                    <div class="discount-label"
+                        style="display: inline-block; background: #fff1f2; color: #e11d48; padding: 4px 12px; border-radius: 9999px; font-size: 0.75rem; font-weight: 700;">
+                        Save 35%
+                    </div>
+                </div>
+                <ul class="feature-list"
+                    style="text-align: left; margin: 0 auto; display: block; width: fit-content; padding: 0; flex-grow: 1;">
+                    <li style="margin-bottom: 0.75rem; font-size: 0.85rem; color: #64748b;"><span
+                            style="color: #22c55e; margin-right: 8px;">✅</span>Access to ALL current courses</li>
+                    <li style="margin-bottom: 0.75rem; font-size: 0.85rem; color: #64748b;"><span
+                            style="color: #22c55e; margin-right: 8px;">✅</span>All future course updates</li>
+                    <li style="margin-bottom: 0.75rem; font-size: 0.85rem; color: #64748b;"><span
+                            style="color: #22c55e; margin-right: 8px;">✅</span>24/7 Expert assistance</li>
+                    <li style="margin-bottom: 0; font-size: 0.85rem; color: #64748b;"><span
+                            style="color: #22c55e; margin-right: 8px;">✅</span>VIP community & perks</li>
+                </ul>
+                <button onclick="handlePlanSelection('Pro')" class="btn btn-outline"
+                    style="width: 100%; margin-top: 1.5rem;">Choose Pro</button>
+            </div>
+        </div>
+
+
+    </main>
+
+    <!-- footer -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h2 class="logo">Learn<span>Mint</span></h2>
+                <p>Bite-sized learning for a fast-paced world. Master new skills in just 30 minutes with expert-led
+                    micro-courses.</p>
+            </div>
+            <div class="footer-links-col">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="courses.html">All Courses</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="dashboard.html">Dashboard</a>
+            </div>
+            <div class="footer-links-col">
+                <h4>Categories</h4>
+                <a href="courses.html">JavaScript</a>
+                <a href="courses.html">UI Design</a>
+                <a href="courses.html">Python</a>
+                <a href="courses.html">React.js</a>
+            </div>
+            <div class="footer-links-col">
+                <h4>Support</h4>
+                <a href="#">Help Center</a>
+                <a href="#">Contact Us</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 LearnMint Inc. All rights reserved.</p>
+            <p>Made with 💚 by Prathamesh More</p>
+        </div>
+    </footer>
+
+    <script src="../js/data.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+
+</html>

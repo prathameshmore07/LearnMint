@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - LearnMint</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <nav class="navbar dashboard-navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Learn<span>Mint</span></a>
+            <div class="nav-links" id="nav-links">
+                <a href="index.html">Home</a>
+                <a href="courses.html">Courses</a>
+                <a href="pricing.html">Pricing</a>
+            </div>
+            <div class="nav-auth" id="nav-auth"></div>
+            <div class="nav-toggle" id="menu-toggle">☰</div>
+        </div>
+    </nav>
+
+    <div class="dashboard-layout">
+        <!-- sidebar -->
+        <aside class="sidebar">
+            <nav>
+                <ul class="sidebar-nav-list">
+                    <li><a href="#" class="sidebar-active-link" onclick="switchDashboardSection('overview', this)">🏠
+                            Overview</a></li>
+                    <li><a href="courses.html" class="sidebar-link">📚 Discover</a></li>
+                    <li><a href="#" class="sidebar-link" onclick="switchDashboardSection('certificates', this)">🎓 My
+                            Certificates</a></li>
+                    <li><a href="#" class="sidebar-link" onclick="switchDashboardSection('plans', this)">💳 My Plans</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- main content -->
+        <main class="main-content">
+            <!-- Overview Section -->
+            <section id="section-overview" class="dashboard-section active">
+                <header class="dashboard-header">
+                    <h1 class="dashboard-greeting">Welcome back, <span id="user-name">Student</span>!</h1>
+                    <p class="dashboard-subtitle">You're doing great. Keep up the momentum!</p>
+                </header>
+
+                <div id="enrolled-courses-container" class="enrolled-grid">
+                    <!-- enrolled courses -->
+                </div>
+
+                <div style="margin-top: 3rem;">
+                    <h2 style="margin-bottom: 1.5rem; color: var(--primary-dark); font-size: 1.25rem;">Recommended for
+                        You</h2>
+                    <div id="recommended-courses-container" class="enrolled-grid">
+                        <!-- recommended courses -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Certificates Section -->
+            <section id="section-certificates" class="dashboard-section">
+                <header class="dashboard-header">
+                    <h1>My Certificates</h1>
+                    <p class="dashboard-subtitle">Your achievements and certifications.</p>
+                </header>
+                <div id="certificates-container" class="enrolled-grid">
+                    <!-- certificates -->
+                </div>
+            </section>
+
+            <!-- Plans Section -->
+            <section id="section-plans" class="dashboard-section">
+                <header class="dashboard-header">
+                    <h1>My Plan</h1>
+                    <p class="dashboard-subtitle">Manage your subscription and billing.</p>
+                </header>
+                <div id="plans-container">
+                    <!-- plan info -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- certificate modal -->
+    <div id="certificate-modal" class="cert-modal-overlay-dark">
+        <div class="cert-modal-simple">
+            <button onclick="closeModal()" class="cert-close-simple">&times;</button>
+
+            <div class="cert-content-simple">
+                <div class="cert-inner-simple">
+                    <h1 class="cert-title-simple">Certificate</h1>
+                    <p class="cert-subtitle-simple">Of Achievement</p>
+
+                    <p>This is to certify that</p>
+                    <h2 id="cert-user-name" class="cert-name-simple">User Name</h2>
+
+                    <p>has successfully completed the micro-course</p>
+                    <h3 id="cert-course-title" class="cert-course-simple">Course Title</h3>
+
+                    <div class="cert-footer-simple">
+                        <div>
+                            <p class="cert-date-simple" id="cert-date">Date</p>
+                            <p class="cert-seal-label">ISSUED DATE</p>
+                        </div>
+                        <div>
+                            <span class="cert-seal-brand">LearnMint</span>
+                            <p class="cert-seal-label">OFFICIAL SEAL</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cert-actions-simple">
+                <button class="btn btn-primary" onclick="window.print()">Download Certificate</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h2 class="logo">Learn<span>Mint</span></h2>
+                <p>Bite-sized learning for a fast-paced world. Master new skills in just 30 minutes with expert-led
+                    micro-courses.</p>
+            </div>
+            <div class="footer-links-col">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="courses.html">All Courses</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="dashboard.html">Dashboard</a>
+            </div>
+            <div class="footer-links-col">
+                <h4>Categories</h4>
+                <a href="courses.html">JavaScript</a>
+                <a href="courses.html">UI Design</a>
+                <a href="courses.html">Python</a>
+                <a href="courses.html">React.js</a>
+            </div>
+            <div class="footer-links-col">
+                <h4>Support</h4>
+                <a href="#">Help Center</a>
+                <a href="#">Contact Us</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 LearnMint Inc. All rights reserved.</p>
+            <p>Made with 💚 by Prathamesh More</p>
+        </div>
+    </footer>
+
+    <script src="../js/data.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+
+</html>

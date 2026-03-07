@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Viewer - LearnMint</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Learn<span>Mint</span></a>
+            <div class="nav-links" id="nav-links">
+                <!-- dynamic navbar -->
+            </div>
+            <div class="nav-auth" id="nav-auth"></div>
+            <div class="nav-toggle" id="menu-toggle">☰</div>
+        </div>
+    </nav>
+
+    <div class="viewer-container">
+        <!-- sidebar -->
+        <aside class="lesson-sidebar">
+            <div class="sidebar-header">
+                <a href="courses.html" class="sidebar-back-link">
+                    ← Back to Courses
+                </a>
+                <h3 id="sidebar-course-title" class="sidebar-course-title">Course Content</h3>
+                <div class="progress-container progress-bar-thin">
+                    <div class="progress-bar" id="course-progress-bar"></div>
+                </div>
+                <div class="progress-row">
+                    <small id="progress-percentage" class="progress-pct">0%</small>
+                    <small class="progress-label">Progress</small>
+                </div>
+            </div>
+            <div class="lesson-list" id="lesson-list">
+                <!-- lesson list -->
+            </div>
+        </aside>
+
+        <!-- video area -->
+        <main class="video-area">
+            <div class="video-player-container">
+                <!-- enrollment overlay -->
+                <div id="enroll-overlay" class="enroll-overlay">
+                    <div class="enroll-box">
+                        <div class="enroll-icon">🔒</div>
+                        <h2 class="enroll-heading">Course Locked</h2>
+                        <p class="enroll-text">Enroll in this course to unlock all lessons and track your learning
+                            progress.</p>
+                        <div class="enroll-price-wrap">
+                            <span class="enroll-price-label">Price</span>
+                            <div id="enroll-price" class="enroll-price-value">₹0</div>
+                        </div>
+                        <button onclick="enrollNow()" class="btn btn-primary enroll-btn">Enroll Now</button>
+                    </div>
+                </div>
+
+                <iframe id="video-player-frame" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            <div class="player-controls">
+                <div>
+                    <h2 id="active-lesson-title" class="active-lesson-title">Select a Lesson</h2>
+                    <p id="course-title" class="course-title-sub">Course Title</p>
+                </div>
+                <div class="controls-btn-row">
+                    <button id="certificate-btn" onclick="showCertificateViewer()"
+                        class="btn btn-outline cert-btn-gold">
+                        🏆 Download Certificate
+                    </button>
+                    <button id="mark-completed-btn" onclick="markAsCompleted()" class="btn btn-primary">Mark as
+                        Completed</button>
+                </div>
+            </div>
+
+            <section class="course-info-section">
+                <div class="course-info-row">
+                    <div class="info-item">
+                        <span class="info-icon">👨‍🏫</span>
+                        <div>
+                            <p class="info-label">Instructor</p>
+                            <p id="course-instructor" class="info-value">Sara Williams</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div>
+                            <p class="info-label">Rating</p>
+                            <p id="course-rating" class="info-value">4.8</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">⏱</span>
+                        <div>
+                            <p class="info-label">Duration</p>
+                            <p id="course-duration" class="info-value">30 mins</p>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="course-about-title">About this Course</h3>
+                <p id="course-description" class="course-about-text">
+                    Master the essentials of modern development with this intensive micro-course. Designed for busy
+                    professionals, you'll learn key skills in under 30 minutes.
+                </p>
+            </section>
+
+            <!-- instructor profile section -->
+            <section class="instructor-profile-section fade-in">
+                <h3 class="course-about-title">Instructor Details</h3>
+                <div class="instructor-profile-card">
+                    <div id="instructor-card-avatar" class="instructor-profile-image avatar-gradient-purple">SW</div>
+                    <div class="instructor-profile-details">
+                        <h4 id="instructor-card-name" class="instructor-name">Sara Williams</h4>
+                        <div id="instructor-card-stats" class="instructor-stats-row">
+                            <span class="instructor-stat">⭐ 4.8 Rating</span>
+                            <span class="instructor-stat">📚 12 Courses Taught</span>
+                        </div>
+                        <p id="instructor-card-bio" class="instructor-bio">Senior Web Developer and educator with 10+
+                            years of experience
+                            building scalable web applications. Passionate about teaching modern web technologies and
+                            helping students bridge the gap between theory and practice.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- certificate modal -->
+    <div id="certificate-modal" class="cert-modal-overlay">
+        <div class="cert-modal-box">
+            <button onclick="closeModal()" class="cert-close-btn">
+                &times;
+            </button>
+
+            <div class="cert-inner-wrap">
+                <div class="cert-inner">
+                    <div class="cert-watermark">🏆</div>
+                    <h1 class="cert-main-title">Certificate</h1>
+                    <p class="cert-subtitle">Course Completion</p>
+
+                    <p class="cert-certify-text">This is to certify that</p>
+                    <h2 id="cert-user-name" class="cert-user-name">User Name</h2>
+
+                    <p class="cert-fulfilled-text">has successfully fulfilled the requirements for</p>
+                    <h3 id="cert-course-title" class="cert-course-title">Course Title</h3>
+
+                    <div style="margin: 1.5rem 0;">
+                        <span class="badge badge-completed" style="font-size: 1.2rem; padding: 0.5rem 1rem;">✅ Certified
+                            Completion Badge</span>
+                    </div>
+
+                    <div class="cert-footer">
+                        <div class="cert-date-block">
+                            <p class="cert-date-value" id="cert-date">March 04, 2026</p>
+                            <p class="cert-date-label">Issue Date</p>
+                        </div>
+                        <div class="cert-brand-block">
+                            <span class="cert-brand-name">Learn<span>Mint</span></span>
+                            <p class="cert-brand-label">Official Verification</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cert-actions">
+                <button class="btn btn-primary cert-download-btn" onclick="window.print()">Download Certificate</button>
+                <button class="btn btn-outline" onclick="closeModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/data.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+
+</html>
