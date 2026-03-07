@@ -41,8 +41,7 @@ HTML & CSS PROJECT/
 
 ## 🌐 Live Demo
 
-Vercel Deployment: https://your-vercel-link.vercel.app
-
+Vercel Deployment: https://learn-mint.vercel.app
 > Note: As part of the Sprint 3 case study, we were required to build a **prototype of the LearnMint platform**.  
 > This project represents the **front-end prototype** of a micro-course marketplace where students can explore courses, enroll, and track learning progress.  
 > The website demonstrates the UI, navigation, and interactive features of the platform using **HTML, CSS, and JavaScript**.
