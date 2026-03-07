@@ -26,6 +26,7 @@ HTML & CSS PROJECT/
 │   ├── app.js             # Auth, navbar, dashboard, certificates
 │   └── data.js            # Course data (instructors, lessons, videos)
 ├── Documentation/         # Case study and related docs
+├── Screenshots
 └── README.md
 ```
 
