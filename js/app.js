@@ -1,3 +1,7 @@
+// learnmint - core logic (condensed)
+
+// --- helpers ---
+
 // get current logged-in user from storage
 const getUser = () => JSON.parse(localStorage.getItem("currentUser"));
 
@@ -161,7 +165,7 @@ function switchLesson(lesson) {
     if (av) {
         const parts = name.split(" ");
         av.innerText = parts.length >= 2 ? (parts[0][0] + parts[1][0]).toUpperCase() : name.substring(0, 2).toUpperCase();
-        av.className = `instructor-profile-image avatar-gradient-${["purple","pink","blue","orange","teal"][name.length % 5]}`;
+        av.className = `instructor-profile-image avatar-gradient-${["purple", "pink", "blue", "orange", "teal"][name.length % 5]}`;
     }
     const stats = document.getElementById("instructor-card-stats");
     if (stats) stats.innerHTML = `<span class="instructor-stat">⭐ ${(4.5 + (name.length % 5) * 0.1).toFixed(1)} Rating</span><span class="instructor-stat">📚 ${3 + (name.length % 7)} Courses</span>`;
@@ -229,7 +233,7 @@ function renderDashboard() {
         const done = user.completedCourses.includes(c.id);
         const badge = done ? `<span style="background:#dcfce7;color:#166534;padding:2px 8px;border-radius:12px;font-size:.8rem;font-weight:bold">Completed</span>`
             : pct > 0 ? `<span style="background:#fef9c3;color:#854d0e;padding:2px 8px;border-radius:12px;font-size:.8rem;font-weight:bold">In Progress</span>`
-            : `<span style="background:#f3f4f6;color:#374151;padding:2px 8px;border-radius:12px;font-size:.8rem;font-weight:bold">Not Started</span>`;
+                : `<span style="background:#f3f4f6;color:#374151;padding:2px 8px;border-radius:12px;font-size:.8rem;font-weight:bold">Not Started</span>`;
         return `<article class="course-card" style="padding:1.5rem">
             <div style="display:flex;justify-content:space-between;align-items:flex-start"><h3 style="margin-top:0">${c.title}</h3>${badge}</div>
             <div style="display:flex;justify-content:space-between;margin:1rem 0"><span>progress</span><span style="font-weight:700">${pct}%</span></div>
@@ -310,7 +314,7 @@ window.showCertificateViewer = function (id) {
     const course = window.courses.find(c => c.id == (id || localStorage.getItem("selectedCourseId")));
     const user = getUser();
     document.getElementById("cert-course-title").innerText = course.title;
-    document.getElementById("cert-user-name").innerText = user?.enrolledCourses?.includes(course.id) ? user.name : "John Doe";
+    document.getElementById("cert-user-name").innerText = user?.enrolledCourses?.includes(course.id) ? user.name : "Eminem";
     const d = document.getElementById("cert-date");
     if (d) d.innerText = new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
     document.getElementById("certificate-modal").style.display = "flex";
