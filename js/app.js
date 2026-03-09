@@ -1,7 +1,3 @@
-// learnmint - core logic (condensed)
-
-// --- helpers ---
-
 // get current logged-in user from storage
 const getUser = () => JSON.parse(localStorage.getItem("currentUser"));
 
